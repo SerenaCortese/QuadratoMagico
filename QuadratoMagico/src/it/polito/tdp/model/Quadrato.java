@@ -36,6 +36,7 @@ public class Quadrato {
 	public boolean isValid() {
 		// quadrato e' una soluzione valida
 		return checkRows() & checkColumns() & checkDiagonals();
+		//& perché tutte e 3 le funzioni devono ritornare true!
 	}
 	
 	public boolean contains(int i) {
@@ -48,5 +49,8 @@ public class Quadrato {
 	
 	public void remove(int i) {
 		this.matrice.remove(Integer.valueOf(i));
+	//this.matrice.remove(i) non funziona come voglio
+	//perché la lista è fatta da Integer non int
+	
 	}
 }
