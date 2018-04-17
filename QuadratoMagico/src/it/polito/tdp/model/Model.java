@@ -11,7 +11,7 @@ public class Model {
 
 		soluzione = new ArrayList<Quadrato>();
 		//ogni volta che viene chiamato questo metodo genero una soluzione diversa
-		//perché avrò problema diverso
+		//perché avrò problema diverso quindi non avrò problemi di NullPointerException
 
 		int step = 0;
 		Quadrato parziale = new Quadrato(n);
@@ -22,15 +22,15 @@ public class Model {
 	}
 
 	private void recursive(int step, Quadrato parziale, int dim) {
-		
-		System.out.println(parziale);
+		//Debug
+		//System.out.println(parziale);
 		
 		if (step >= dim*dim) {
 			// soluzione completa
 			if (parziale.isValid()) {
 				// devo salvare la soluzione completa
 				soluzione.add(new Quadrato(parziale));
-			}				//non salvo parziale perché andando avanti col metodo ricorsivo
+			}				//non faccio soluzione.add(parziale) perché andando avanti col metodo ricorsivo
 							//questa cambierebbe => meglio una DEEPCOPY così da fotografare la sol parziale corrente
 		}
 		

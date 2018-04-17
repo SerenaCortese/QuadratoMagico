@@ -11,6 +11,11 @@ public class TestModel {
 		//voglio una lista di soluzioni(quadrati)=> TUTTE LE SOLUZIONI
 		List<Quadrato> quadrati = model.findMagicSquare(3);
 										//3 è la dimensione del quadrato
+		
+		for(Quadrato q : quadrati) {
+			System.out.println(q);
+		}
+		
 	}
 
 }
